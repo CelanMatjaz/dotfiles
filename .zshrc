@@ -11,3 +11,7 @@ zstyle :compinstall filename '/home/matjaz/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+autoload -Uz promptinit
+promptinit
+prompt walters
