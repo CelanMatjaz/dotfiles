@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/home/matjaz/.zdotdir/completions:"* ]]; then export FPATH="/home/matjaz/.zdotdir/completions:$FPATH"; fi
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -15,3 +17,4 @@ compinit
 autoload -Uz promptinit
 promptinit
 prompt walters
+. "/home/matjaz/.deno/env"

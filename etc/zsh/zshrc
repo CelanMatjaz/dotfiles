@@ -1,0 +1,49 @@
+alias ls="ls --color=auto"
+alias grep="grep --color=auto"
+
+alias erc="nvim $ZDOTDIR/.zshrc && source $ZDOTDIR/.zshrc"
+alias ep="nvim $ZDOTDIR/.zprofile && source $ZDOTDIR/.zprofile"
+alias etc="nvim ${HOME}/.config/tmux/tmux.conf && tmux source ${HOME}/.config/tmux/tmux.conf"
+
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+
+if [ -d "$HOME/.local/bin" ]; then
+  export PATH=$PATH:${HOME}/.local/bin
+fi
+
+# Neovim
+NVIM_CONFIG_DIR="${XDG_DATA_HOME:-${HOME}/.config/nvim}/"
+
+if [ ! -d "$NVIM_CONFIG_DIR" ]; then
+  mkdir -p "$(dirname $NVIM_CONFIG_DIR)"
+  git clone https://github.com/CelanMatjaz/nvim.config "$NVIM_CONFIG_DIR"
+fi
+
+# Zinit
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+
+if [ ! -d "$ZINIT_HOME" ]; then
+  mkdir -p "$(dirname $ZINIT_HOME)"
+  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+
+source "${ZINIT_HOME}/zinit.zsh"
+
+#Zinit plugins
+zinit ice depth=1; autoload -U compinit; compinit
+
+# zsh autocompletions
+if [ ! -d "$HOME/.zsh/zsh-autosuggestions" ]; then
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${HOME}/.zsh/zsh-autosuggestions
+fi
+source ${HOME}/.zsh/zsh-autosuggestions
+
+# misc
+autoload -U compinit; compinit
+eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/base.toml)"
+eval "$(zoxide init zsh)"
