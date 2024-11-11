@@ -1,3 +1,5 @@
+export ZDOTDIR="${HOME}/.zdotdir"
+
 # Wayland
 export _JAVA_AWT_WM_NONREPARENTING=1
 export SDL_VIDEODRIVER=wayland
@@ -27,4 +29,3 @@ export XMODIFIERS=@im=fcitx
 
 # Nvim
 export EDITOR=nvim
-

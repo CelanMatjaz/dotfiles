@@ -5,6 +5,8 @@ alias erc="nvim $ZDOTDIR/.zshrc && source $ZDOTDIR/.zshrc"
 alias ep="nvim $ZDOTDIR/.zprofile && source $ZDOTDIR/.zprofile"
 alias etc="nvim ${HOME}/.config/tmux/tmux.conf && tmux source ${HOME}/.config/tmux/tmux.conf"
 alias logout="loginctl terminate-user $(whoami)"
+alias cpdir="pwd | xclip"
+alias cddir="cd $(xclip -o)"
 
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_DUPS
