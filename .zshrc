@@ -14,7 +14,13 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+<<<<<<< Updated upstream
 autoload -Uz promptinit
 promptinit
 prompt walters
 . "/home/matjaz/.deno/env"
+=======
+export QT_QPA_PLATFORM=wayland
+export QT_WAYLAND_DECORATION=adwaita
+export QT_STYLE_OVERRIDE=adwaita-dark
+>>>>>>> Stashed changes
