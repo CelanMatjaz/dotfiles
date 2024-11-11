@@ -1,6 +1,4 @@
 emulate sh -c 'source /etc/profile'
 
-export ZDOTDIR=~/.zdotdir
-
 PATH=$PATH:~/go/bin
 PATH=$PATH:~/.local/bin

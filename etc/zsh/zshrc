@@ -5,8 +5,6 @@ alias erc="nvim $ZDOTDIR/.zshrc && source $ZDOTDIR/.zshrc"
 alias ep="nvim $ZDOTDIR/.zprofile && source $ZDOTDIR/.zprofile"
 alias etc="nvim ${HOME}/.config/tmux/tmux.conf && tmux source ${HOME}/.config/tmux/tmux.conf"
 alias logout="loginctl terminate-user $(whoami)"
-alias cpdir="pwd | xclip"
-alias cddir="cd $(xclip -o)"
 
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_DUPS
@@ -41,10 +39,15 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit ice depth=1; autoload -U compinit; compinit
 
 # zsh autocompletions
-if [ ! -d "$HOME/.zsh/zsh-autosuggestions" ]; then
-  git clone https://github.com/zsh-users/zsh-autosuggestions ${HOME}/.zsh/zsh-autosuggestions
+if [ ! -d "$ZDOTDIR/misc/zsh-autosuggestions" ]; then
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZDOTDIR}/misc/zsh-autosuggestions
 fi
-source ${HOME}/.zsh/zsh-autosuggestions
+source ${ZDOTDIR}/misc/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# oh-my-posh
+if command -v oh-my-posh &> /dev/null; then else
+  curl -s https://ohmyposh.dev/install.sh | zsh -s
+fi
 
 # misc
 autoload -U compinit; compinit

@@ -1,23 +1,32 @@
 # Add deno completions to search path
 if [[ ":$FPATH:" != *":/home/matjaz/.zdotdir/completions:"* ]]; then export FPATH="/home/matjaz/.zdotdir/completions:$FPATH"; fi
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
+HISTFILE=~/.zdotdir/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt autocd nomatch
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/matjaz/.zshrc'
+zstyle :compinstall filename '/home/matjaz/.zdotdir/.zshrc'
 
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-autoload -Uz promptinit
-promptinit
-prompt walters
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-export QT_QPA_PLATFORM=wayland
-export QT_WAYLAND_DECORATION=adwaita
-export QT_STYLE_OVERRIDE=adwaita-dark
+alias cd="z"
+
+source /home/matjaz/downloads/1.3.290.0/setup-env.sh
+
+# pnpm
+export PNPM_HOME="/home/matjaz/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+DISABLE_AUTO_TITLE="true"
+
+source <(fzf --zsh)
