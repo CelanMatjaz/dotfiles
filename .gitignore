@@ -1,1 +1,7 @@
 .zdotdir/.zsh_custom
+.zdotdir/.histfile
+.zdotdir/.zcompdump
+.zdotdir/misc
+
+.config/tmux/plugins
+.config/hypr/hyprpaper.conf
