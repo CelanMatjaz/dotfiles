@@ -1,3 +1,6 @@
+source $ZDOTDIR/.zsh_setup
+source $ZDOTDIR/.zsh_alias
+
 # Add deno completions to search path
 if [[ ":$FPATH:" != *":/home/matjaz/.zdotdir/completions:"* ]]; then export FPATH="/home/matjaz/.zdotdir/completions:$FPATH"; fi
 # Lines configured by zsh-newuser-install
@@ -30,3 +33,4 @@ esac
 DISABLE_AUTO_TITLE="true"
 
 source <(fzf --zsh)
+

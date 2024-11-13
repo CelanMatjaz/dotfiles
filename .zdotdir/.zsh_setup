@@ -1,21 +1,9 @@
-alias ls="ls --color=auto"
-alias grep="grep --color=auto"
-
-alias erc="nvim $ZDOTDIR/.zshrc && source $ZDOTDIR/.zshrc"
-alias ep="nvim $ZDOTDIR/.zprofile && source $ZDOTDIR/.zprofile"
-alias etc="nvim ${HOME}/.config/tmux/tmux.conf && tmux source ${HOME}/.config/tmux/tmux.conf"
-alias logout="loginctl terminate-user $(whoami)"
-
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
-
-if [ -d "$HOME/.local/bin" ]; then
-  export PATH=$PATH:${HOME}/.local/bin
-fi
 
 # Neovim
 NVIM_CONFIG_DIR="${XDG_DATA_HOME:-${HOME}/.config/nvim}/"

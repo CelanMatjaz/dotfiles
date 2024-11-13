@@ -29,3 +29,8 @@ export XMODIFIERS=@im=fcitx
 export EDITOR=nvim
 
 export ZDOTDIR=~/.zdotdir
+
+if [ -d "$HOME/.local/bin" ]; then
+  export PATH=$PATH:${HOME}/.local/bin
+fi
+
