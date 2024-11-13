@@ -1,1 +1,1 @@
-cp ./etc/zsh/* /etc/zsh/
+echo "export ZDOTDIR=~/.zdotdir" >> /etc/zsh/zshenv
