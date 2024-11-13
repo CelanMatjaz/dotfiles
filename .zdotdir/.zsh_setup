@@ -38,14 +38,14 @@ if command -v oh-my-posh &> /dev/null; then else
 fi
 
 # zoxide
-if command -v z &> /dev/null; then
-    echo "Install zoxide for better directory navigation"
-else
+if command -v zoxide &> /dev/null; then
+    eval "$(zoxide init zsh)"
     alias cd="z"
+else
+    echo "Install zoxide for better directory navigation"
 fi
 
 # misc
 autoload -U compinit; compinit
 eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/base.toml)"
-eval "$(zoxide init zsh)"
 source <(fzf --zsh)
