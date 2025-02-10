@@ -48,4 +48,5 @@ fi
 # misc
 autoload -U compinit; compinit
 eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/base.toml)"
+oh-my-posh disable notice
 source <(fzf --zsh)
