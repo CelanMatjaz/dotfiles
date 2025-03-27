@@ -4,7 +4,9 @@ alias grep="grep --color=auto"
 alias erc="nvim $ZDOTDIR/.zshrc && source $ZDOTDIR/.zshrc"
 alias ep="nvim $ZDOTDIR/.zprofile && source $ZDOTDIR/.zprofile"
 alias etc="nvim ${HOME}/.config/tmux/tmux.conf && tmux source ${HOME}/.config/tmux/tmux.conf"
+alias envim="pushd ${HOME}/.config/nvim && nvim && popd"
+alias lg="lazygit"
 
 alias logout="loginctl terminate-user ${USER}"
 
-alias git-log="git log"
+alias git-log="git log --reflog --oneline --parents --graph"
