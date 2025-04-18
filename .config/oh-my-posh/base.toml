@@ -51,7 +51,7 @@ final_space = true
       style = 'full'
 
   [[blocks.segments]]
-    template = '{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <p:vibrant>{{ if gt .Behind 0 }}↓{{ end }}{{ if gt .Ahead 0 }}↓{{ end }}</>'
+    template = 'git:({{ .HEAD }}){{ if or (.Working.Changed) }}<p:vibrant>*</>{{ end }} <p:vibrant>{{ if gt .Behind 0 }}↓{{ end }}{{ if gt .Ahead 0 }}↑{{ end }}</>'
     foreground = 'p:muted'
     powerline_symbol = ''
     background = 'transparent'
@@ -86,7 +86,7 @@ final_space = true
   newline = true
 
   [[blocks.segments]]
-    template = '{{ if .Env.TMUX }}tmux {{ end }}❯'
+    template = '{{ if .Env.TMUX }}tmux{{ end }}{{ if gt .Code 0 }} err:{{ .Code }}{{end}} ❯'
     foreground = 'p:muted'
     background = 'transparent'
     type = 'text'
