@@ -7,14 +7,14 @@ cursor-style-blink = false
 window-decoration = false
 confirm-close-surface = false
 
-keybind = ctrl+s>r=reload_config
-# keybind = ctrl+s>plus=increase_font_size
+keybind = ctrl+š>r=reload_config
+# keybind = ctrl+š>plus=increase_font_size
 # keybind = ctrl+minus=decrease_font_size
 
 # tabs
-keybind = ctrl+s>c=new_tab
-keybind = ctrl+s>l=next_tab
-keybind = ctrl+s>h=previous_tab
+keybind = ctrl+š>c=new_tab
+keybind = ctrl+š>l=next_tab
+keybind = ctrl+š>h=previous_tab
 
 palette = 0=1d1d1d
 palette = 1=ed333b
