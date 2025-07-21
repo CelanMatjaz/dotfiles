@@ -21,5 +21,3 @@ source $ZDOTDIR/.zsh_alias
 if [[ -f $ZDOTDIR/.zsh_custom ]]; then
     source $ZDOTDIR/.zsh_custom
 fi 
-
-. "/home/dev/.deno/env"

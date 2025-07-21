@@ -33,5 +33,3 @@ export ZDOTDIR=~/.zdotdir
 if [ -d "$HOME/.local/bin" ]; then
   export PATH=$PATH:${HOME}/.local/bin
 fi
-
-. "$HOME/.cargo/env"
