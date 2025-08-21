@@ -10,3 +10,11 @@ alias lg="lazygit"
 alias logout="loginctl terminate-user ${USER}"
 
 alias git-log="git log --reflog --oneline --parents --graph"
+
+tmuxcd() {
+	tmux new -s $(basename "$PWD")
+}
+
+tmuxa() {
+	tmux a
+}

@@ -35,7 +35,10 @@ source ${ZDOTDIR}/misc/zsh-autosuggestions/zsh-autosuggestions.zsh
 # oh-my-posh
 if command -v oh-my-posh &> /dev/null; then else
   curl -s https://ohmyposh.dev/install.sh | zsh -s
+  oh-my-posh font install JetBrainsMono
 fi
+eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/base.toml)"
+oh-my-posh disable notice
 
 # zoxide
 if command -v zoxide &> /dev/null; then
@@ -47,6 +50,4 @@ fi
 
 # misc
 autoload -U compinit; compinit
-eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/base.toml)"
-oh-my-posh disable notice
 source <(fzf --zsh)
