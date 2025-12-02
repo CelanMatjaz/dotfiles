@@ -31,6 +31,7 @@ if [ ! -d "$ZDOTDIR/misc/zsh-autosuggestions" ]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZDOTDIR}/misc/zsh-autosuggestions
 fi
 source ${ZDOTDIR}/misc/zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey '^[l' autosuggest-accept
 
 # oh-my-posh
 if command -v oh-my-posh &> /dev/null; then else
